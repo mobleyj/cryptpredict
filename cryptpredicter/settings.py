@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'django_crontab',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -105,6 +106,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# List of Cron jobs
+CRONJOBS = [
+    ('* * * * *', 'cryptpredicter.cron.latest_value')
+]
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/

@@ -6,7 +6,7 @@ from django.utils import timezone
 
 
 class BpiPriceUpdate(models.Model):
-    update_time = models.DateTimeField(default=timezone.now)
+    update_time = models.DateTimeField(default=timezone.now, unique=True)
     usd_value = models.FloatField(default=0.0)
     gbp_value = models.FloatField(null=True, default=0.0)
     eur_value = models.FloatField(null=True, default=0.0)
